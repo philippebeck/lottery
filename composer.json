@@ -1,0 +1,40 @@
+{
+    "name": "philippebeck/lottery",
+    "version": "0.1.0",
+    "type": "project",
+    "description": "Lottery Statistics & Predictions",
+    "homepage": "https://lottery.philippebeck.net",
+    "license": "Apache-2.0 License",
+    "authors": [
+      {
+        "name": "Philippe Beck",
+        "email": "philippe@philippebeck.net",
+        "homepage": "https://philippebeck.net",
+        "role": "Lead Developer"
+      }
+    ],
+    "autoload": {
+      "psr-4": {
+        "App\\": "src/"
+      }
+    },
+    "require": {
+      "php": "7.3",
+      "devsagency/pam": "^4.6.0"
+    },
+    "require-dev": {
+      "tracy/tracy": "^2.7.5"
+    },
+    "config": {
+      "platform": {
+        "php": "7.3"
+      }
+    },
+    "support": {
+      "email": "admin@philippebeck.net",
+      "issues": "https://github.com/philippebeck/lottery/issues",
+      "wiki": "https://github.com/philippebeck/lottery/wiki",
+      "source": "https://github.com/philippebeck/lottery"
+    }
+  }
+  

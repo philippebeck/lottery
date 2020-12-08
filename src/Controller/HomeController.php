@@ -26,7 +26,7 @@ class HomeController extends MainController
         if (!password_verify($this->user["pass"], $user["pass"])) {
             $this->getSession()->createAlert("Failed authentication !", "black");
 
-            $this->redirect("auth");
+            $this->redirect("home");
         }
 
         $this->getSession()->createSession($user);
@@ -55,7 +55,7 @@ class HomeController extends MainController
 
             $this->getSession()->createAlert("Check the reCAPTCHA !", "red");
 
-            $this->redirect("auth");
+            $this->redirect("home");
         }
 
         return $this->render("front/home.twig");

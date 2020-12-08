@@ -26,13 +26,16 @@ class AdminController extends MainController
             $this->redirect("home");
         }
 
-        $allNewLotto    = ModelFactory::getModel("NewLotto")->listData();
         $allOldLotto    = ModelFactory::getModel("OldLotto")->listData();
+        $allLotto       = ModelFactory::getModel("Lotto")->listData();
         $allUsers       = ModelFactory::getModel("Users")->listData();
 
+        $allOldLotto    = array_reverse($allOldLotto);
+        $allLotto       = array_reverse($allLotto);
+
         return $this->render("back/admin.twig", [
-            "allNewLotto"   => $allNewLotto,
             "allOldLotto"   => $allOldLotto,
+            "allLotto"      => $allLotto,
             "allUsers"      => $allUsers
         ]);
     }

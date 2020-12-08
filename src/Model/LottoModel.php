@@ -5,7 +5,7 @@ namespace App\Model;
 use Pam\Model\MainModel;
 
 /**
- * Class NewLottoModel
+ * Class LottoModel
  * @package App\Model
  */
-class NewLottoModel extends MainModel {}
+class LottoModel extends MainModel {}

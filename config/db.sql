@@ -11,7 +11,7 @@ CREATE TABLE `Users` (
     `pass`  VARCHAR(100)    NOT NULL
 ) ENGINE=INNODB DEFAULT CHARSET=utf8;
 
-CREATE TABLE `loto2008` (
+CREATE TABLE `OldLotto` (
   `annee_numero_de_tirage` int(11) NOT NULL PRIMARY KEY,
   `jour_de_tirage` varchar(8) NOT NULL,
   `date_de_tirage` varchar(10) NOT NULL,
@@ -24,7 +24,7 @@ CREATE TABLE `loto2008` (
   `combinaison_gagnante_en_ordre_croissant` varchar(17) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-CREATE TABLE `loto2019` (
+CREATE TABLE `NewLotto` (
   `annee_numero_de_tirage` int(11) NOT NULL PRIMARY KEY,
   `jour_de_tirage` varchar(8) NOT NULL,
   `date_de_tirage` varchar(10) NOT NULL,
@@ -43,7 +43,7 @@ CREATE TABLE `loto2019` (
   `combinaison_gagnant_second_tirage_en_ordre_croissant` varchar(14) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-INSERT INTO `loto2008` (`annee_numero_de_tirage`, `jour_de_tirage`, `date_de_tirage`, `boule_1`, `boule_2`, `boule_3`, `boule_4`, `boule_5`, `numero_chance`, `combinaison_gagnante_en_ordre_croissant`) VALUES
+INSERT INTO `OldLotto` (`annee_numero_de_tirage`, `jour_de_tirage`, `date_de_tirage`, `boule_1`, `boule_2`, `boule_3`, `boule_4`, `boule_5`, `numero_chance`, `combinaison_gagnante_en_ordre_croissant`) VALUES
 (2008081, 'LUNDI', '06/10/2008', 19, 33, 41, 24, 27, 9, '19-24-27-33-41+9'),
 (2008082, 'MERCREDI', '08/10/2008', 24, 48, 32, 41, 22, 1, '22-24-32-41-48+1'),
 (2008083, 'SAMEDI', '11/10/2008', 46, 22, 10, 39, 20, 4, '10-20-22-39-46+4'),
@@ -711,7 +711,7 @@ INSERT INTO `loto2008` (`annee_numero_de_tirage`, `jour_de_tirage`, `date_de_tir
 (2013001, 'MERCREDI', '02/01/2013', 33, 21, 37, 22, 31, 4, '21-22-31-33-37+4'),
 (2013002, 'SAMEDI', '05/01/2013', 30, 46, 47, 6, 45, 6, '6-30-45-46-47+6');
 
-INSERT INTO `loto2008` (`annee_numero_de_tirage`, `jour_de_tirage`, `date_de_tirage`, `boule_1`, `boule_2`, `boule_3`, `boule_4`, `boule_5`, `numero_chance`, `combinaison_gagnante_en_ordre_croissant`) VALUES
+INSERT INTO `OldLotto` (`annee_numero_de_tirage`, `jour_de_tirage`, `date_de_tirage`, `boule_1`, `boule_2`, `boule_3`, `boule_4`, `boule_5`, `numero_chance`, `combinaison_gagnante_en_ordre_croissant`) VALUES
 (2013003, 'LUNDI', '07/01/2013', 45, 31, 15, 32, 48, 5, '15-31-32-45-48+5'),
 (2013004, 'MERCREDI', '09/01/2013', 30, 33, 22, 29, 26, 9, '22-26-29-30-33+9'),
 (2013005, 'SAMEDI', '12/01/2013', 13, 48, 40, 6, 37, 7, '6-13-37-40-48+7'),
@@ -1364,7 +1364,7 @@ INSERT INTO `loto2008` (`annee_numero_de_tirage`, `jour_de_tirage`, `date_de_tir
 (2017026, 'MERCREDI', '01/03/2017', 33, 31, 16, 46, 20, 5, '16-20-31-33-46+5'),
 (2017027, 'SAMEDI', '04/03/2017', 28, 14, 37, 32, 4, 4, '4-14-28-32-37+4');
 
-INSERT INTO `loto2008` (`annee_numero_de_tirage`, `jour_de_tirage`, `date_de_tirage`, `boule_1`, `boule_2`, `boule_3`, `boule_4`, `boule_5`, `numero_chance`, `combinaison_gagnante_en_ordre_croissant`) VALUES
+INSERT INTO `OldLotto` (`annee_numero_de_tirage`, `jour_de_tirage`, `date_de_tirage`, `boule_1`, `boule_2`, `boule_3`, `boule_4`, `boule_5`, `numero_chance`, `combinaison_gagnante_en_ordre_croissant`) VALUES
 (2017028, 'LUNDI', '06/03/2017', 26, 10, 6, 41, 3, 9, '3-6-10-26-41+9'),
 (2017029, 'MERCREDI', '08/03/2017', 40, 16, 46, 42, 47, 2, '16-40-42-46-47+2'),
 (2017030, 'SAMEDI', '11/03/2017', 1, 39, 31, 13, 42, 7, '1-13-31-39-42+7'),
@@ -1676,7 +1676,7 @@ INSERT INTO `loto2008` (`annee_numero_de_tirage`, `jour_de_tirage`, `date_de_tir
 (2019023, 'SAMEDI', '23/02/2019', 3, 45, 13, 4, 44, 5, '3-4-13-44-45+5'),
 (2019024, 'LUNDI', '25/02/2019', 7, 44, 37, 48, 38, 7, '7-37-38-44-48+7');
 
-INSERT INTO `loto2008` (`annee_numero_de_tirage`, `jour_de_tirage`, `date_de_tirage`, `boule_1`, `boule_2`, `boule_3`, `boule_4`, `boule_5`, `numero_chance`, `combinaison_gagnante_en_ordre_croissant`) VALUES
+INSERT INTO `OldLotto` (`annee_numero_de_tirage`, `jour_de_tirage`, `date_de_tirage`, `boule_1`, `boule_2`, `boule_3`, `boule_4`, `boule_5`, `numero_chance`, `combinaison_gagnante_en_ordre_croissant`) VALUES
 (2019025, 'MERCREDI', '27/02/2019', 14, 1, 34, 19, 4, 2, '1-4-14-19-34+2'),
 (2019026, 'SAMEDI', '02/03/2019', 46, 42, 38, 25, 16, 9, '16-25-38-42-46+9'),
 (2019027, 'LUNDI', '04/03/2019', 4, 15, 11, 36, 33, 2, '4-11-15-33-36+2'),
@@ -1785,7 +1785,7 @@ INSERT INTO `loto2008` (`annee_numero_de_tirage`, `jour_de_tirage`, `date_de_tir
 (2019130, 'MERCREDI', '30/10/2019', 46, 13, 48, 2, 22, 1, '2-13-22-46-48+1'),
 (2019131, 'SAMEDI', '02/11/2019', 41, 1, 18, 16, 13, 3, '1-13-16-18-41+3');
 
-INSERT INTO `loto2019` (`annee_numero_de_tirage`, `jour_de_tirage`, `date_de_tirage`, `boule_1`, `boule_2`, `boule_3`, `boule_4`, `boule_5`, `numero_chance`, `combinaison_gagnante_en_ordre_croissant`, `boule_1_second_tirage`, `boule_2_second_tirage`, `boule_3_second_tirage`, `boule_4_second_tirage`, `boule_5_second_tirage`, `combinaison_gagnant_second_tirage_en_ordre_croissant`) VALUES
+INSERT INTO `NewLotto` (`annee_numero_de_tirage`, `jour_de_tirage`, `date_de_tirage`, `boule_1`, `boule_2`, `boule_3`, `boule_4`, `boule_5`, `numero_chance`, `combinaison_gagnante_en_ordre_croissant`, `boule_1_second_tirage`, `boule_2_second_tirage`, `boule_3_second_tirage`, `boule_4_second_tirage`, `boule_5_second_tirage`, `combinaison_gagnant_second_tirage_en_ordre_croissant`) VALUES
 (20199132, 'LUNDI', '04/11/2019', 16, 9, 42, 1, 39, 7, '1-9-16-39-42+7', 6, 18, 25, 41, 43, '6-18-25-41-43'),
 (20199133, 'MERCREDI', '06/11/2019', 43, 27, 23, 44, 42, 10, '23-27-42-43-44+10', 28, 35, 41, 44, 48, '28-35-41-44-48'),
 (20199134, 'SAMEDI', '09/11/2019', 26, 24, 6, 18, 29, 3, '6-18-24-26-29+3', 4, 9, 13, 28, 49, '4-9-13-28-49'),

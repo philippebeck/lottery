@@ -1,0 +1,90 @@
+{% extends 'layout/layout.twig' %}
+
+{% block title %}Update a Lotto{% endblock %}
+
+{% block summary %}{% endblock %}
+
+{% block main %}
+    <main class="align-center">
+        <form class="form" method="post" action={{ url('lotto!update') }}>
+            <fieldset>
+                <legend>
+                    <i class="fas fa-dice-four fa-2x"></i>
+                </legend>
+                <ul>
+                    <li>
+                        <label for="annee_numero_de_tirage">Année & Numéro de Tirage</label>
+                        <input id="annee_numero_de_tirage" name="annee_numero_de_tirage" type="number" required placeholder="YYYYNNN" value="{{lotto.annee_numero_de_tirage}}">
+                    </li>
+                    <li>
+                        <label for="jour_de_tirage">Jour de Tirage</label>
+                        <input id="jour_de_tirage" name="jour_de_tirage" type="text" required placeholder="DAY" value="{{lotto.jour_de_tirage}}">
+                    </li>
+                    <li>
+                        <label for="date_de_tirage">Date de Tirage</label>
+                        <input id="date_de_tirage" name="date_de_tirage" type="text" required placeholder="DD/MM/YYYY" value="{{lotto.date_de_tirage}}">
+                    </li>
+                    <li>
+                        <label for="boule_1">Boule 1</label>
+                        <input id="boule_1" name="boule_1" type="number" min="1" max="49" required placeholder="Ball 1" value="{{lotto.boule_1}}">
+                    </li>
+                    <li>
+                        <label for="boule_2">Boule 2</label>
+                        <input id="boule_2" name="boule_2" type="number" min="1" max="49" required placeholder="Ball 2" value="{{lotto.boule_2}}">
+                    </li>
+                    <li>
+                        <label for="boule_3">Boule 3</label>
+                        <input id="boule_3" name="boule_3" type="number" min="1" max="49" required placeholder="Ball 3" value="{{lotto.boule_3}}">
+                    </li>
+                    <li>
+                        <label for="boule_4">Boule 4</label>
+                        <input id="boule_4" name="boule_4" type="number" min="1" max="49" required placeholder="Ball 4" value="{{lotto.boule_4}}">
+                    </li>
+                    <li>
+                        <label for="boule_5">Boule 5</label>
+                        <input id="boule_5" name="boule_5" type="number" min="1" max="49" required placeholder="Ball 5" value="{{lotto.boule_5}}">
+                    </li>
+                    <li>
+                        <label for="numero_chance">Numéro Chance</label>
+                        <input id="numero_chance" name="numero_chance" type="number" min="1" max="10" required placeholder="Chance Number" value="{{lotto.numero_chance}}">
+                    </li>
+                    <li>
+                        <label for="combinaison_gagnante_en_ordre_croissant">Combinaison Gagnante en Ordre Croissant</label>
+                        <input id="combinaison_gagnante_en_ordre_croissant" name="combinaison_gagnante_en_ordre_croissant" type="text" required placeholder="Winning Combination in Ascending Order" value="{{lotto.combinaison_gagnante_en_ordre_croissant}}">
+                    </li>
+                    <li>
+                        <label for="boule_1_second_tirage">Boule 1 Second Tirage</label>
+                        <input id="boule_1_second_tirage" name="boule_1_second_tirage" type="number" min="1" max="49" required placeholder="Ball 1 Second Draw" value="{{lotto.boule_1_second_tirage}}">
+                    </li>
+                    <li>
+                        <label for="boule_2_second_tirage">Boule 2 Second Tirage</label>
+                        <input id="boule_2_second_tirage" name="boule_2_second_tirage" type="number" min="1" max="49" required placeholder="Ball 2 Second Draw" value="{{lotto.boule_2_second_tirage}}">
+                    </li>
+                    <li>
+                        <label for="boule_3_second_tirage">Boule 3 Second Tirage</label>
+                        <input id="boule_3_second_tirage" name="boule_3_second_tirage" type="number" min="1" max="49" required placeholder="Ball 3 Second Draw" value="{{lotto.boule_3_second_tirage}}">
+                    </li>
+                    <li>
+                        <label for="boule_4_second_tirage">Boule 4 Second Tirage</label>
+                        <input id="boule_4_second_tirage" name="boule_4_second_tirage" type="number" min="1" max="49" required placeholder="Ball 4 Second Draw" value="{{lotto.boule_4_second_tirage}}">
+                    </li>
+                    <li>
+                        <label for="boule_5_second_tirage">Boule 5 Second Tirage</label>
+                        <input id="boule_5_second_tirage" name="boule_5_second_tirage" type="number" min="1" max="49" required placeholder="Ball 5 Second Draw" value="{{lotto.boule_5_second_tirage}}">
+                    </li>
+                    <li>
+                        <label for="combinaison_gagnant_second_tirage_en_ordre_croissant">Combinaison Gagnante Second Tirage en Ordre Croissant</label>
+                        <input id="combinaison_gagnant_second_tirage_en_ordre_croissant" name="combinaison_gagnant_second_tirage_en_ordre_croissant" type="text" required placeholder="Winning Combination Second Draw in Ascending Order" value="{{lotto.combinaison_gagnant_second_tirage_en_ordre_croissant}}">
+                    </li>
+                </ul>
+                <ul>
+                    <li>
+                        <input type="reset" value="Reset">
+                        <input type="submit" value="Create">
+                    </li>
+                </ul>
+            </fieldset>
+        </form>
+        <a class="btn-black btn-lg" href="{{ url('admin') }}">Quit</a>
+    </main>
+{% endblock %}

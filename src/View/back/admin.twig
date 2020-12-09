@@ -48,7 +48,7 @@
                     <tr>
                         <td>{{ oldLotto.jour_de_tirage }}</td>
                         <td>{{ oldLotto.date_de_tirage }}</td>
-                        <td>{{ oldLotto.combinaison_gagnante_en_ordre_croissant }}</td>
+                        <td>{{ oldLotto.combinaison_gagnante }}</td>
                      </tr>
                 {% endfor %}
                 </tbody>
@@ -78,9 +78,9 @@
                             {{ lotto.date_de_tirage }}
                         </td>
                         <td>
-                            {{ lotto.combinaison_gagnante_en_ordre_croissant }}
+                            {{ lotto.combinaison_gagnante }}
                             <hr>
-                            {{ lotto.combinaison_gagnant_second_tirage_en_ordre_croissant }}
+                            {{ lotto.seconde_combinaison_gagnante }}
                         </td>
                         <td>
                             <a class="btn-blue" href="{{ url('lotto!update', {'id': lotto.id}) }}">

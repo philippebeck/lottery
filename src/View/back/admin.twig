@@ -1,0 +1,147 @@
+{% extends 'layout/layout.twig' %}
+
+{% block title %}Administration{% endblock %}
+
+{% block summary %}{% endblock %}
+
+{% block main %}
+    <input id="menu-radio1" class="menu-radio1" type="radio" name="menu">
+    <input id="menu-radio2" class="menu-radio2" type="radio" name="menu">
+    <input id="menu-radio3" class="menu-radio3" type="radio" name="menu" checked>
+    <input id="menu-radio4" class="menu-radio4" type="radio" name="menu">
+
+    <nav class="menu">
+        <label class="button-red" for="menu-radio1" title="Show OldLotto">
+            <i class="fas fa-dice-two color-red-into"></i>
+            <span class="color-red-into">Old Lotto</span>
+        </label>
+        <label class="button-green" for="menu-radio2" title="Show Lotto">
+            <i class="fas fa-dice-four color-green-into"></i>
+            <span class="color-green-into">Lotto</span>
+        </label>
+        <label class="button-blue" for="menu-radio3" title="Show Predictions">
+            <i class="fas fa-dice-six color-blue-into"></i>
+            <span class="color-blue-into">Predictions</span>
+        </label>
+        <label class="button-purple" for="menu-radio4" title="Show Users">
+            <i class="fas fa-users color-purple-into"></i>
+            <span class="color-purple-into">Users</span>
+        </label>
+    </nav>
+
+    <main id="admin" class="menu-relay">
+        <section class="menu-target1">
+            <h2 class="deco-under color-red">
+                <i class="fas fa-dice-two"></i>
+                Old Lotto
+            </h2>
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>Jour</th>
+                    <th>Date</th>
+                    <th>Draw</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for oldLotto in allOldLotto %}
+                    <tr>
+                        <td>{{ oldLotto.jour_de_tirage }}</td>
+                        <td>{{ oldLotto.date_de_tirage }}</td>
+                        <td>{{ oldLotto.combinaison_gagnante }}</td>
+                     </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </section>
+
+        <section class="menu-target2">
+            <h2 class="deco-under color-green">
+                <i class="fas fa-dice-four"></i>
+                Lotto
+            </h2>
+            <a class="btn-green btn-lg" href="{{ url('lotto!create') }}">New Lotto</a>
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Draws</th>
+                    <th>Actions</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for lotto in allLotto %}
+                    <tr>
+                        <td>
+                            {{ lotto.jour_de_tirage }}
+                            <hr>
+                            {{ lotto.date_de_tirage }}
+                        </td>
+                        <td>
+                            {{ lotto.combinaison_gagnante }}
+                            <hr>
+                            {{ lotto.seconde_combinaison_gagnante }}
+                        </td>
+                        <td>
+                            <a class="btn-blue" href="{{ url('lotto!update', {'id': lotto.id}) }}">
+                                <i class="fas fa-pen-square fa-fw fa-lg"></i>
+                            </a>
+                            <a class="btn-red" href="{{ url('lotto!delete', {'id': lotto.id}) }}">
+                                <i class="fas fa-times-circle fa-fw fa-lg"></i>
+                            </a>
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </section>
+
+        <section class="menu-target3">
+            <h2 class="deco-under color-green">
+                <i class="fas fa-dice-six"></i>
+                Predictions
+            </h2>
+        </section>
+
+        <section class="menu-target4">
+            <h2 class="deco-under color-purple">
+                <i class="fas fa-users"></i>
+                Users
+            </h2>
+            <a class="btn-green btn-lg" href="{{ url('users!create') }}">New User</a>
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>User</th>
+                    <th>Infos</th>
+                    <th>Actions</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for user in allUsers %}
+                    <tr>
+                        <td>
+                            <figure>
+                                <img class="bord-purple" src="img/users/{{ user.image }}" alt="Screenshot of {{ user.name }}">
+                                <figcaption>{{ user.name }}</figcaption>
+                            </figure>
+                        </td>
+                        <td>{{ user.email }}</td>
+                        <td>
+                            <a class="btn-orange" href="{{ url('home!logout') }}" title="Logout">
+                                <i class="fas fa-sign-out-alt fa-fw fa-lg"></i>
+                            </a>
+                            <a class="btn-blue" href="{{ url('users!update', {'id': user.id}) }}">
+                                <i class="fas fa-pen-square fa-fw fa-lg"></i>
+                            </a>
+                            <a class="btn-red" href="{{ url('users!delete', {'id': user.id}) }}">
+                                <i class="fas fa-times-circle fa-fw fa-lg"></i>
+                            </a>
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </section>
+    </main>
+{% endblock %}
